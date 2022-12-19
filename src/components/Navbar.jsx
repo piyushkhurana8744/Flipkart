@@ -7,7 +7,21 @@ import {MdNotifications} from "react-icons/md"
 import {SlGraph} from "react-icons/sl"
 import {BsCloudArrowDownFill} from "react-icons/bs"
 import {Link} from "react-router-dom"
+import axios from 'axios'
+import { useState,useEffect, useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
 function Navbar(){
+    const [name,setName]=useState({})
+    const {isAuth}=useContext(AuthContext)
+    console.log(isAuth)
+    const getData=async()=>{
+        let res=await axios.get(`http://localhost:3004/login`)
+        setName(res.data)
+    }
+    
+    useEffect(()=>{
+     getData()
+    },[])
     return(
         <Box backgroundColor={"#2874f0"} color="white">
             <Flex width="80%" margin="auto" fontWeight={"500"} justify={"space-around"} alignItems="center" gap="17px">
@@ -27,8 +41,9 @@ function Navbar(){
         </Flex>
         
         <Box>
-            <Button color="#2874f0" size={"sm"} width="100px">Login</Button>
+            {isAuth? <Text>{name.firstname} {name.lastname}</Text>:<Link to="/login"><Button color="#2874f0" size={"sm"} width="100px">Login</Button></Link>}
         </Box>
+       
         <Text fontSize={"17px"} marginLeft="17px">Become a Seller</Text>
         <HoverMenu name="More" item1={<Flex  gap="10px"><Icon color="#2874f0" fontSize="30px" as={MdNotifications}/>
         <Text>Notification Prefrence</Text></Flex>}

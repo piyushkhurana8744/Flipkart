@@ -1,8 +1,8 @@
 import { Box, Flex,Heading,Text,Image, Center } from "@chakra-ui/react"
 import {AiFillStar} from "react-icons/ai"
-function MobileCard({image,name,rating,and,review,ram,display,camera,battery,warranty,price,assured,cuttoff,delivery,bank,off,star}){
+function MobileCard({image,name,rating,and,review,ram,display,camera,battery,warranty,price,assured,cuttoff,delivery,bank,off,star,processor}){
     return(
-        <Flex justifyContent={"end"} alignItems="center" boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px" padding={"20px"} marginTop="20px">
+        <Flex justifyContent={"end"} alignItems="center" borderTop="1px solid #E0E0E0"  padding={"20px"} >
             <Box width={"20%"} margin="auto">
                 <Center><Image height="200px" src={image}/></Center>
             </Box>
@@ -17,6 +17,7 @@ function MobileCard({image,name,rating,and,review,ram,display,camera,battery,war
                 <Text>{ram}</Text>
                 <Text>{display}</Text>
                 <Text>{camera}</Text>
+                <Text>{processor}</Text>
                 <Text>{battery}</Text>
                 <Text>{warranty}</Text>
             </Box>

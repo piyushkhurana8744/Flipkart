@@ -7,11 +7,11 @@ import Navbar from "../components/Navbar"
 import MenuNav from "../components/MenuNav"
 import {AiFillStar} from "react-icons/ai"
 import {Link} from "react-router-dom"
-function Mi(){
+function Apple(){
     const [product,setProduct]=useState([])
     const [sort,setSort]=useState("")
     const getData=async()=>{
-        let res=await axios.get(`http://localhost:3004/posts?category=mi&_sort=rating&_order=${sort}`)
+        let res=await axios.get(`http://localhost:3004/posts?category=apple&_sort=rating&_order=${sort}`)
         setProduct(res.data)
     }
     const handleHighToLow=()=>{
@@ -29,7 +29,7 @@ function Mi(){
             <Navbar />
         <MenuNav />
         <Flex>
-            <Box width={"20%"} textAlign="start" marginLeft={"20px"} marginTop="20px" >
+            <Box width={"20%"} textAlign="start" marginLeft={"20px"} marginTop="20px">
                 <Text fontSize={"30px"} fontWeight="400">Filters</Text>
                 <hr></hr>
                 <Text fontSize={"17px"} fontWeight="600">Categories</Text>
@@ -73,13 +73,14 @@ function Mi(){
                     </Flex>
                 </Box>
             </Box>
-            <Box width={"75%"} margin="auto" padding={"20px"} boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px" marginTop="20px">
+            <Box width={"75%"} margin="auto" padding={"20px"} boxShadow=" rgba(0, 0, 0, 0.16) 0px 1px 4px" marginTop="20px">
                 {product.map(el=><Link key={el.id} to={`/singleproductpage/${el.id}`}>
-                    <MobileCard key={el.id}  name={el.name} image={el.image} star={el.star} rating={el.rating} and={el._13vcmD} review={el.rating2} ram={el.rgWa7D} display={el.display} camera={el.camera} battery={el.battery} price={el.price} cuttoff={el.cuttoff} off={el.off} warranty={el.warranty} assured={el.assured} delivery={el.delivery}  bank={el.bank==="Bank Offer"?"Bank Offer":`Upto ${Math.ceil(el.priceA*0.3)} of on Exchange `}/></Link>)}
+                    <MobileCard key={el.id}  name={el.name} image={el.image} star={el.star} rating={el.rating} and={el._13vcmD} review={el.rating2} ram={el.rgWa7D} display={el.display} camera={el.camera} battery={el.battery} price={el.price} cuttoff={el.cuttoff} off={el.off} warranty={el.warranty} assured={el.assured} delivery={el.delivery}  bank={el.bank==="Bank Offer"?"Bank Offer":`Upto ${Math.ceil(el.priceA*0.3)} of on Exchange `} processor
+                    ={el.processor}/></Link>)}
             </Box>
         </Flex>
         </Box>
         
     )
 }
-export default Mi
+export default Apple

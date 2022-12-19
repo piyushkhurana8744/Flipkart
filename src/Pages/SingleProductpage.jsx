@@ -23,6 +23,7 @@ function SingleProductPage(){
     const handleAddtocart=async()=>{
         let send={
             id:product.id,
+            no:1,
             image:product.image,
             name:product.name,
             price:product.price,
@@ -106,7 +107,7 @@ function SingleProductPage(){
                         <Flex gap="10px">
                     <Image width="20px" src="https://www.pngplay.com/wp-content/uploads/5/Dot-Symbol-PNG-Background.png"/>
                     <Text>Buy Without Exchange</Text>
-                    <Text>{Math.ceil(product.priceA*0.3)}</Text>
+                    <Text>₹{Math.ceil(product.priceA*0.3)}</Text>
                 </Flex>
                         </Td>
                     </Tr>

@@ -11,7 +11,7 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 export default function HoverMenu({item1,item2,item3,item4,item5,item6,name}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
-        <Menu isOpen={isOpen}>
+        <Menu isOpen={isOpen} >
             <MenuButton 
                 variant="ghost"
                 mx={1}

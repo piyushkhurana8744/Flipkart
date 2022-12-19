@@ -2,20 +2,21 @@
 import { Box, Heading,Flex,Text} from "@chakra-ui/react";
 import {Link} from "react-router-dom"
 import HoverMenu from "./Menu"
+import styles from "./MenuNav.module.css"
 function MenuNav(){
     return(
-       <Flex justifyContent={"space-evenly"} alignItems="center"  fontSize={"15px"} boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"  >
+       <Flex justifyContent={"space-evenly"} alignItems="center"  fontSize={"15px"} boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px" backgroundColor={"#fff"} >
         <HoverMenu  name="Electronics"
         item1={
             <Flex gap="20px" color="#616161" >
-                <Box >
+                <Box className={styles.container}>
                     <Text >Mobile</Text>
                     <Link to="/mi"><Text>Mi</Text></Link>
                     <Text>Realme</Text>
                     <Text>Samsung</Text>
                     <Text>Infinix</Text>
                     <Text>Oppo</Text>
-                    <Text>Apple</Text>
+                    <Link to="/apple"><Text>Apple</Text></Link>
                     <Text>Vivo</Text>
                     <Text>Honor</Text>
                     <Text>Asus</Text>
