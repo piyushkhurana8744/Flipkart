@@ -65,7 +65,7 @@ All pages are responsive.
 
 On this page, you can register a user. If the user is already registered, you can simply sign in by providing valid details of the user. 
 
-![signup](https://i.postimg.cc/rm8kXK17/signin.png)
+![signup](https://i.postimg.cc/JnYfBKX5/Screenshot-2023-02-14-190434.png)
 
 ###  Sign in Page - 
 
